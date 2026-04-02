@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+
+        .theme-radio {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            width: 0;
+            height: 0;
+        }
+
+        :root,
+        body {
+            --bs-primary:           #111;
+            --bs-primary-rgb:       17, 17, 17;
+            --bs-link-color:        #111;
+            --bs-link-hover-color:  #444;
+            --bs-focus-ring-color:  rgba(17,17,17,.25);
+            color-scheme: light;
+        }
+
+        .btn-primary {
+            --bs-btn-bg:                    #111;
+            --bs-btn-border-color:          #111;
+            --bs-btn-hover-bg:              #333;
+            --bs-btn-hover-border-color:    #333;
+            --bs-btn-active-bg:             #000;
+            --bs-btn-active-border-color:   #000;
+            --bs-btn-color:                 #fff;
+            --bs-btn-hover-color:           #fff;
+            --bs-btn-active-color:          #fff;
+            --bs-btn-disabled-bg:           #aaa;
+            --bs-btn-disabled-border-color: #aaa;
+        }
+
+        .nav-pills .nav-link.active,
+        .nav-pills .show > .nav-link {
+            background-color: var(--bs-body-color) !important;
+            color:            var(--bs-body-bg)    !important;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: #888;
+            box-shadow:   0 0 0 0.2rem rgba(17,17,17,.12);
+        }
+
+
+        body:has(#th-dark:checked) {
+            color-scheme: dark;
+            --bs-primary:               #eee;
+            --bs-primary-rgb:           238, 238, 238;
+            --bs-link-color:            #ddd;
+            --bs-link-hover-color:      #aaa;
+            --bs-focus-ring-color:      rgba(238,238,238,.25);
+            --bs-body-bg:               #0a0a0a;
+            --bs-body-bg-rgb:           10, 10, 10;
+            --bs-body-color:            #e5e5e5;
+            --bs-body-color-rgb:        229, 229, 229;
+            --bs-secondary-color:       rgba(229,229,229,.6);
+            --bs-secondary-bg:          #161616;
+            --bs-tertiary-color:        rgba(229,229,229,.4);
+            --bs-tertiary-bg:           #111111;
+            --bs-tertiary-bg-rgb:       17, 17, 17;
+            --bs-border-color:          #222222;
+            --bs-border-color-translucent: rgba(255,255,255,.08);
+            --bs-emphasis-color:        #ffffff;
+            --bs-emphasis-color-rgb:    255, 255, 255;
+            --bs-heading-color:         #f0f0f0;
+            --bs-profile-color: #f0f0f0;
+            --bs-profile-bg: rgba(255,255,255,.08);
+            
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) {
+                color-scheme: dark;
+                --bs-primary:               #eee;
+                --bs-primary-rgb:           238, 238, 238;
+                --bs-link-color:            #ddd;
+                --bs-link-hover-color:      #aaa;
+                --bs-focus-ring-color:      rgba(238,238,238,.25);
+                --bs-body-bg:               #0a0a0a;
+                --bs-body-bg-rgb:           10, 10, 10;
+                --bs-body-color:            #e5e5e5;
+                --bs-body-color-rgb:        229, 229, 229;
+                --bs-secondary-color:       rgba(229,229,229,.6);
+                --bs-secondary-bg:          #161616;
+                --bs-tertiary-color:        rgba(229,229,229,.4);
+                --bs-tertiary-bg:           #111111;
+                --bs-tertiary-bg-rgb:       17, 17, 17;
+                --bs-border-color:          #222222;
+                --bs-border-color-translucent: rgba(255,255,255,.08);
+                --bs-emphasis-color:        #ffffff;
+                --bs-emphasis-color-rgb:    255, 255, 255;
+                --bs-heading-color:         #f0f0f0;
+                --bs-profile-color: #f0f0f0;
+                --bs-profile-bg: rgba(255, 255, 255, 0.355);
+            }
+        }
+
+        /* ── btn-primary dark ── */
+        body:has(#th-dark:checked) .btn-primary {
+            --bs-btn-bg:                  #eee;
+            --bs-btn-border-color:        #eee;
+            --bs-btn-hover-bg:            #ccc;
+            --bs-btn-hover-border-color:  #ccc;
+            --bs-btn-active-bg:           #fff;
+            --bs-btn-active-border-color: #fff;
+            --bs-btn-color:               #0a0a0a;
+            --bs-btn-hover-color:         #0a0a0a;
+            --bs-btn-active-color:        #0a0a0a;
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) .btn-primary {
+                --bs-btn-bg:                  #eee;
+                --bs-btn-border-color:        #eee;
+                --bs-btn-hover-bg:            #ccc;
+                --bs-btn-hover-border-color:  #ccc;
+                --bs-btn-active-bg:           #fff;
+                --bs-btn-active-border-color: #fff;
+                --bs-btn-color:               #0a0a0a;
+                --bs-btn-hover-color:         #0a0a0a;
+                --bs-btn-active-color:        #0a0a0a;
+            }
+        }
+
+
+        body:has(#th-dark:checked) .modal-content {
+            background-color: #0e0e0e;
+            border-color:     #1e1e1e;
+            box-shadow:       0 8px 32px rgba(0,0,0,.6);
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) .modal-content {
+                background-color: #0e0e0e;
+                border-color:     #1e1e1e;
+                box-shadow:       0 8px 32px rgba(0,0,0,.6);
+            }
+        }
+
+
+        body:has(#th-dark:checked) .offcanvas {
+            background-color: #0e0e0e;
+            border-color:     #1a1a1a;
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) .offcanvas {
+                background-color: #0e0e0e;
+                border-color:     #1a1a1a;
+            }
+        }
+
+        body:has(#th-dark:checked) .dropdown-menu {
+            background-color:          #0e0e0e;
+            border-color:              #1e1e1e;
+            box-shadow:                0 4px 24px rgba(0,0,0,.5);
+            --bs-dropdown-link-color:  rgba(229,229,229,.8);
+            --bs-dropdown-link-hover-color: #e5e5e5;
+            --bs-dropdown-link-hover-bg:    #1a1a1a;
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) .dropdown-menu {
+                background-color:          #0e0e0e;
+                border-color:              #1e1e1e;
+                box-shadow:                0 4px 24px rgba(0,0,0,.5);
+                --bs-dropdown-link-color:  rgba(229,229,229,.8);
+                --bs-dropdown-link-hover-color: #e5e5e5;
+                --bs-dropdown-link-hover-bg:    #1a1a1a;
+            }
+        }
+
+
+        body:has(#th-dark:checked) .form-control,
+        body:has(#th-dark:checked) .form-select {
+            background-color: #0a0a0a;
+            border-color:     #222;
+            color:            #e5e5e5;
+        }
+        body:has(#th-dark:checked) .form-control:focus,
+        body:has(#th-dark:checked) .form-select:focus {
+            border-color: #444;
+            box-shadow:   0 0 0 0.2rem rgba(238,238,238,.08);
+        }
+        body:has(#th-dark:checked) .input-group-text {
+            background-color: #111;
+            border-color:     #222;
+            color:            #888;
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) .form-control,
+            body:has(#th-system:checked) .form-select {
+                background-color: #0a0a0a;
+                border-color:     #222;
+                color:            #e5e5e5;
+            }
+            body:has(#th-system:checked) .form-control:focus,
+            body:has(#th-system:checked) .form-select:focus {
+                border-color: #444;
+                box-shadow:   0 0 0 0.2rem rgba(238,238,238,.08);
+            }
+            body:has(#th-system:checked) .input-group-text {
+                background-color: #111;
+                border-color:     #222;
+                color:            #888;
+            }
+        }
+
+        body:has(#th-dark:checked) .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) .btn-close {
+                filter: invert(1) grayscale(100%) brightness(200%);
+            }
+        }
+
+        body:has(#th-dark:checked) .auth-social-btn:not(.btn-dark-fill) svg[fill="#000"],
+        body:has(#th-dark:checked) .auth-social-btn:not(.btn-dark-fill) svg[stroke="#000"] {
+            fill:   #e5e5e5;
+            stroke: #e5e5e5;
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) .auth-social-btn:not(.btn-dark-fill) svg[fill="#000"],
+            body:has(#th-system:checked) .auth-social-btn:not(.btn-dark-fill) svg[stroke="#000"] {
+                fill:   #e5e5e5;
+                stroke: #e5e5e5;
+            }
+        }
+
+
+        .theme-switcher {
+            display:    flex;
+            align-items: center;
+            background: var(--bs-tertiary-bg, #f0f0f0);
+            border:     1px solid var(--bs-border-color, #e5e5e5);
+            border-radius: 8px;
+            padding:    3px;
+            gap:        2px;
+        }
+
+        .theme-btn {
+            display:         flex;
+            align-items:     center;
+            justify-content: center;
+            width:           28px;
+            height:          28px;
+            border-radius:   5px;
+            cursor:          pointer;
+            color:           var(--bs-secondary-color, rgba(17,17,17,.6));
+            transition:      background 0.15s, color 0.15s;
+            padding:         0;
+            user-select:     none;
+            margin:          0;
+        }
+        .theme-btn svg { display: block; flex-shrink: 0; }
+        .theme-btn:hover {
+            background: var(--bs-secondary-bg, #f5f5f5);
+            color:      var(--bs-body-color, #111);
+        }
+
+        /* Active state — which button matches the checked radio */
+        body:has(#th-light:checked)  label.theme-btn[for="th-light"],
+        body:has(#th-system:checked) label.theme-btn[for="th-system"],
+        body:has(#th-dark:checked)   label.theme-btn[for="th-dark"] {
+            background: var(--bs-body-bg, #fff);
+            color:      var(--bs-body-color, #111);
+            box-shadow: 0 1px 3px rgba(0,0,0,.12);
+        }
+        body:has(#th-dark:checked) label.theme-btn[for="th-dark"] {
+            box-shadow: 0 1px 3px rgba(0,0,0,.4);
+        }
+        @media (prefers-color-scheme: dark) {
+            body:has(#th-system:checked) label.theme-btn[for="th-system"] {
+                box-shadow: 0 1px 3px rgba(0,0,0,.4);
+            }
+        }
+
+        /* Mobile theme row */
+        .mobile-theme-row {
+            display:         flex;
+            align-items:     center;
+            justify-content: center;
+            gap:             8px;
+            padding:         8px 0;
+        }
+        .mobile-theme-row .theme-btn {
+            width:         36px;
+            height:        36px;
+            border:        1px solid var(--bs-border-color, #e5e5e5);
+            border-radius: 8px;
+        }
+        .mobile-theme-row .theme-switcher {
+            padding: 4px;
+            gap:     4px;
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           NAVBAR
+           ══════════════════════════════════════════════════════════════ */
+        body { font-family: 'Geist', sans-serif; }
+
+        .top-navbar {
+            background:    var(--bs-body-bg, #fff);
+            border-bottom: 1px solid var(--bs-border-color, #e5e5e5);
+            padding:       0 1.5rem;
+            height:        56px;
+            display:       flex;
+            align-items:   center;
+            position:      relative;
+            transition:    background 0.2s, border-color 0.2s;
+        }
+
+        .brand-mark {
+            display:         flex;
+            align-items:     center;
+            gap:             8px;
+            text-decoration: none;
+            color:           var(--bs-body-color, #111);
+            font-weight:     700;
+            font-size:       1.5rem;
+            letter-spacing:  -0.02em;
+            flex-shrink:     0;
+        }
+        .brand-mark:hover { color: var(--bs-body-color, #111); }
+
+        .nav-center { display: none; }
+        @media (min-width: 992px) {
+            .nav-center {
+                position:   absolute;
+                left:       50%;
+                transform:  translateX(-50%);
+                display:    flex;
+                align-items: center;
+                gap:        1rem;
+            }
+        }
+
+        .desktop-nav { display: flex; align-items: center; }
+        .desktop-nav .nav-link {
+            color:          var(--bs-secondary-color, rgba(17,17,17,.6));
+            font-size:      0.875rem;
+            padding:        6px 10px;
+            border-radius:  6px;
+            transition:     background 0.15s, color 0.15s;
+            white-space:    nowrap;
+        }
+        .desktop-nav .nav-link:hover {
+            background: var(--bs-tertiary-bg, #f0f0f0);
+            color:      var(--bs-body-color, #111);
+        }
+        .desktop-nav .dropdown-menu {
+            border:        1px solid var(--bs-border-color, #e5e5e5);
+            border-radius: 8px;
+            box-shadow:    0 4px 16px rgba(0,0,0,.08);
+            padding:       4px;
+            min-width:     140px;
+        }
+        .desktop-nav .dropdown-item {
+            font-size:     0.875rem;
+            color:         var(--bs-secondary-color, rgba(17,17,17,.6));
+            border-radius: 5px;
+            padding:       7px 12px;
+        }
+        .desktop-nav .dropdown-item:hover {
+            background: var(--bs-tertiary-bg, #f0f0f0);
+            color:      var(--bs-body-color, #111);
+        }
+
+        .nav-auth {
+            display:     flex;
+            align-items: center;
+            gap:         6px;
+            margin-left: auto;
+        }
+        .nav-auth a {
+            font-size:       0.875rem;
+            font-weight:     600;
+            padding:         5px 12px;
+            border-radius:   6px;
+            text-decoration: none;
+            cursor:          pointer;
+        }
+        .nav-auth .btn-ghost {
+            color:  var(--bs-body-color, #111);
+            border: 1px solid var(--bs-border-color, #e5e5e5);
+        }
+        .nav-auth .btn-ghost:hover {
+            background: var(--bs-tertiary-bg, #f0f0f0);
+        }
+        .nav-auth .btn-solid {
+            background: var(--bs-body-color, #111);
+            color:      var(--bs-body-bg, #fff);
+        }
+        .nav-auth .btn-solid:hover { opacity: 0.82; }
+
+        .mobile-toggle,
+        .mobile-sidebar-btn {
+            background: none;
+            border:     none;
+            color:      var(--bs-body-color, #111);
+            padding:    6px;
+            cursor:     pointer;
+            line-height: 1;
+            display:    flex;
+            align-items: center;
+        }
+        .mobile-toggle { margin-left: auto; }
+
+        /* ══════════════════════════════════════════════════════════════
+           AUTH STATE — logged in / logged out
+           ══════════════════════════════════════════════════════════════ */
+
+        /* Logged-out: show by default */
+        .logged_out { display: flex; }
+        /* Logged-in desktop: hidden by default */
+        .logged_in_lg { display: none; }
+        /* Logged-in mobile: hidden by default */
+        .logged_in_sm { display: none !important; }
+
+        /* When logged in radio is checked */
+        body:has(#auth-logged:checked) .logged_out    { display: none !important; }
+        body:has(#auth-logged:checked) .logged_in_lg  { display: flex; }
+        body:has(#auth-logged:checked) .logged_in_sm  { display: flex !important; }
+
+        /* Hide desktop avatar on mobile */
+        @media (max-width: 991.98px) {
+            .logged_in_lg { display: none !important; }
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           OFFCANVAS NAV
+           ══════════════════════════════════════════════════════════════ */
+        #offcanvas_nav { max-width: 280px; }
+        #offcanvas_nav .offcanvas-header {
+            border-bottom: 1px solid var(--bs-border-color, #e5e5e5);
+            padding:       1rem 1.25rem;
+        }
+        #offcanvas_nav .nav-link {
+            color:         var(--bs-secondary-color, rgba(17,17,17,.6));
+            font-size:     0.9rem;
+            padding:       9px 4px;
+            border-bottom: 1px solid var(--bs-border-color, #e5e5e5);
+        }
+        #offcanvas_nav .nav-link:last-child { border-bottom: none; }
+        #offcanvas_nav .nav-link:hover      { color: var(--bs-body-color, #111); }
+        #offcanvas_nav hr { margin: 8px 0; border-color: var(--bs-border-color, #e5e5e5); }
+
+        /* ══════════════════════════════════════════════════════════════
+           SIDEBAR & TABS
+           ══════════════════════════════════════════════════════════════ */
+        .sidebar { width: 230px; min-width: 230px; }
+
+        .tab_bar .nav-link {
+            color:         var(--bs-secondary-color, rgba(17,17,17,.6));
+            border-radius: 6px;
+            margin:        4px 0;
+            padding:       10px 12px;
+            transition:    background 0.2s ease, color 0.2s ease;
+        }
+        .tab_bar .nav-link:hover   { background: var(--bs-secondary-bg, #f5f5f5); }
+        .tab_bar .nav-link.active  {
+            background: var(--bs-body-color, #111);
+            color:      var(--bs-body-bg, #fff);
+        }
+
+        .tab-content {
+            background:    var(--bs-body-bg, #fff);
+            padding:       25px;
+            border-radius: 6px;
+            border:        1px solid var(--bs-border-color, #e5e5e5);
+        }
+        .tab-pane h2 {
+            display:        inline-block;
+            padding-bottom: 6px;
+            border-bottom:  2px solid var(--bs-border-color, #e5e5e5);
+        }
+
+        #offcanvas_id { width: 230px; }
+
+        /* ══════════════════════════════════════════════════════════════
+           AUTH MODALS
+           ══════════════════════════════════════════════════════════════ */
+        #modal_login .modal-dialog,
+        #modal_register .modal-dialog { max-width: 380px; }
+
+        #modal_login .modal-content,
+        #modal_register .modal-content {
+            border:        none;
+            border-radius: 16px;
+            overflow:      hidden;
+            box-shadow:    0 16px 70px rgba(0,0,0,.15);
+        }
+
+        #modal_login .modal-body,
+        #modal_register .modal-body { padding: 32px 36px 24px; }
+
+        @media (max-width: 575.98px) {
+            #modal_login .modal-body,
+            #modal_register .modal-body { padding: 24px 20px 20px; }
+        }
+
+        .auth-title {
+            font-size:      2rem;
+            font-weight:    500;
+            letter-spacing: -0.04em;
+            color:          var(--bs-body-color, #111);
+            text-align:     center;
+            margin-bottom:  28px;
+        }
+
+        .auth-email-input {
+            width:        100%;
+            border:       1px solid var(--bs-border-color, #e5e5e5);
+            border-radius: 12px;
+            padding:      12px 16px;
+            font-size:    0.925rem;
+            font-family:  'Geist', sans-serif;
+            color:        var(--bs-body-color, #111);
+            background:   var(--bs-body-bg, #fff);
+            outline:      none;
+            transition:   border-color 0.2s, background 0.2s;
+        }
+        .auth-email-input::placeholder { color: var(--bs-secondary-color, rgba(17,17,17,.5)); }
+        .auth-email-input:focus        { border-color: #888; }
+
+        .auth-email-btn {
+            display:      block;
+            width:        100%;
+            background:   var(--bs-body-color, #111);
+            color:        var(--bs-body-bg, #fff);
+            border:       none;
+            border-radius: 12px;
+            padding:      12px 16px;
+            font-size:    0.925rem;
+            font-weight:  600;
+            font-family:  'Geist', sans-serif;
+            cursor:       pointer;
+            transition:   opacity 0.15s;
+            margin-top:   10px;
+            text-align:   center;
+            text-decoration: none;
+        }
+        .auth-email-btn:hover { opacity: 0.82; }
+
+        .auth-divider {
+            border:        none;
+            border-top:    1px solid var(--bs-border-color, #e5e5e5);
+            margin:        24px 0;
+        }
+
+        .auth-social-btn {
+            width:           100%;
+            display:         flex;
+            align-items:     center;
+            justify-content: center;
+            gap:             10px;
+            background:      var(--bs-body-bg, #fff);
+            border:          1px solid var(--bs-border-color, #e5e5e5);
+            border-radius:   12px;
+            padding:         12px 16px;
+            font-size:       0.925rem;
+            font-weight:     500;
+            font-family:     'Geist', sans-serif;
+            color:           var(--bs-body-color, #111);
+            cursor:          pointer;
+            transition:      background 0.15s, border-color 0.15s;
+        }
+        .auth-social-btn:hover {
+            background:   var(--bs-tertiary-bg, #f0f0f0);
+            border-color: var(--bs-secondary-color, rgba(17,17,17,.4));
+        }
+        .auth-social-btn + .auth-social-btn { margin-top: 10px; }
+
+        /* GitHub in register — stays dark in both light & dark themes */
+        .auth-social-btn.btn-dark-fill {
+            background:   #111;
+            color:        #fff;
+            border-color: #111;
+        }
+        .auth-social-btn.btn-dark-fill:hover {
+            background:   #222;
+            border-color: #222;
+        }
+
+        .auth-email-link { text-align: center; margin-top: 22px; }
+        .auth-email-link a {
+            color:           #0070f3;
+            font-size:       0.925rem;
+            font-weight:     500;
+            text-decoration: none;
+        }
+        .auth-email-link a:hover { text-decoration: underline; }
+
+        .auth-signup-link {
+            text-align:  center;
+            margin-top:  20px;
+            font-size:   0.9rem;
+            color:       var(--bs-secondary-color, rgba(17,17,17,.6));
+        }
+        .auth-signup-link a {
+            color:           #0070f3;
+            font-weight:     600;
+            text-decoration: none;
+        }
+        .auth-signup-link a:hover { text-decoration: underline; }
+
+        .auth-footer {
+            text-align: center;
+            padding:    16px 36px 22px;
+        }
+        .auth-footer a {
+            color:           var(--bs-secondary-color, rgba(17,17,17,.5));
+            font-size:       0.8rem;
+            text-decoration: none;
+            margin:          0 10px;
+        }
+        .auth-footer a:hover { color: var(--bs-body-color, #111); }
+
+        .auth-close-btn {
+            position:      absolute;
+            top:           16px;
+            right:         16px;
+            background:    none;
+            border:        none;
+            color:         var(--bs-secondary-color, rgba(17,17,17,.5));
+            font-size:     1.2rem;
+            cursor:        pointer;
+            z-index:       10;
+            width:         32px;
+            height:        32px;
+            display:       flex;
+            align-items:   center;
+            justify-content: center;
+            border-radius: 8px;
+            transition:    background 0.15s, color 0.15s;
+        }
+        .auth-close-btn:hover {
+            background: var(--bs-tertiary-bg, #f0f0f0);
+            color:      var(--bs-body-color, #111);
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           FOOTER
+           ══════════════════════════════════════════════════════════════ */
+        .site-footer {
+            background:    var(--bs-body-bg, #fff);
+            border-top:    1px solid var(--bs-border-color, #e5e5e5);
+            padding-top:   3.5rem;
+            padding-bottom: 0;
+            font-family:   'Geist', sans-serif;
+            color:         var(--bs-body-color, #111);
+            transition:    background 0.2s, border-color 0.2s, color 0.2s;
+        }
+
+        .footer-heading {
+            font-size:      0.7rem;
+            font-weight:    600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color:          var(--bs-body-color, #111);
+            margin-bottom:  1rem;
+            font-family:    'Geist', monospace;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding:    0;
+            margin:     0;
+        }
+        .footer-links li { margin-bottom: 0.55rem; }
+        .footer-links a {
+            color:           var(--bs-secondary-color, rgba(17,17,17,.55));
+            text-decoration: none;
+            font-size:       0.875rem;
+            transition:      color 0.15s;
+        }
+        .footer-links a:hover {
+            color: var(--bs-body-color, #111);
+        }
+
+        .footer-badge {
+            display:       inline-block;
+            font-size:     0.6rem;
+            font-weight:   600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding:       1px 5px;
+            border:        1px solid var(--bs-border-color, #ddd);
+            border-radius: 4px;
+            color:         var(--bs-secondary-color, rgba(17,17,17,.55));
+            margin-left:   6px;
+            vertical-align: middle;
+            line-height:   1.4;
+        }
+
+        .footer-divider {
+            border:     none;
+            border-top: 1px solid var(--bs-border-color, #e5e5e5);
+            margin:     2.5rem 0 0 0;
+        }
+
+        .footer-bottom {
+            display:         flex;
+            align-items:     center;
+            justify-content: space-between;
+            padding:         1rem 0;
+            flex-wrap:       wrap;
+            gap:             12px;
+        }
+
+        .footer-status {
+            display:     flex;
+            align-items: center;
+            gap:         8px;
+            font-size:   0.75rem;
+            font-family: 'Geist', monospace;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color:       var(--bs-secondary-color, rgba(17,17,17,.55));
+        }
+        .footer-status-dot {
+            width:         8px;
+            height:        8px;
+            border-radius: 50%;
+            background:    #22c55e;
+            flex-shrink:   0;
+        }
+
+        .footer-social-link {
+            color:           var(--bs-secondary-color, rgba(17,17,17,.5));
+            text-decoration: none;
+            font-size:       0.875rem;
+            display:         inline-flex;
+            align-items:     center;
+            gap:             6px;
+            transition:      color 0.15s;
+        }
+        .footer-social-link:hover {
+            color: var(--bs-body-color, #111);
+        }
+
+        .footer-brand-col {
+            display:        flex;
+            flex-direction: column;
+            align-items:    flex-start;
+        }
+        .footer-brand-mark {
+            font-size:      1.75rem;
+            font-weight:    800;
+            letter-spacing: -0.03em;
+            color:          var(--bs-body-color, #111);
+            text-decoration: none;
+            line-height:    1;
+        }
+        .footer-brand-mark:hover { color: var(--bs-body-color, #111); }
+
+        @media (max-width: 767.98px) {
+            .footer-grid {
+                gap: 2rem !important;
+            }
+            .footer-bottom {
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* ══════════════════════════════════════════════════════════════
+           profile
+           ══════════════════════════════════════════════════════════════ */
+        .profile_menu .dropdown_profile_log_out:active {
+            --bs-profile-log-out-bg: rgb(236, 236, 236);
+            --bs-profile-log-out-color: rgb(255, 0, 0);
+            background-color: var(--bs-profile-log-out-bg) !important;
+            color: var(--bs-profile-log-out-color) !important;
+        }
+        .profile_menu .dropdown_profile:active {
+            --bs-profile-bg: rgb(236, 236, 236);
+            --bs-profile-color: rgb(0, 0, 0);
+            background-color: var(--bs-profile-bg) !important;
+            color: var(--bs-profile-color) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         AUTH + THEME RADIO INPUTS
+         ══════════════════════════════════════════════════════════════ -->
+    <input type="radio" name="auth" id="auth-guest"  hidden checked>
+    <input type="radio" name="auth" id="auth-logged" hidden>
+
+    <input type="radio" class="theme-radio" id="th-light"  name="theme">
+    <input type="radio" class="theme-radio" id="th-system" name="theme" checked>
+    <input type="radio" class="theme-radio" id="th-dark"   name="theme">
+
+    <nav class="top-navbar">
+        <button class="mobile-sidebar-btn d-lg-none me-3" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvas_id">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 1H14.5C15.33 1 16 1.67 16 2.5V13.5C16 14.33 15.33 15 14.5 15H1.5C0.67 15 0 14.33 0 13.5V2.5C0 1.67 0.67 1 1.5 1ZM5.5 2.5H1.5V13.5H5.5V2.5ZM7 2.5V13.5H14.5V2.5H7Z" fill="currentColor"/>
+            </svg>
+        </button>
+
+        <a href="#" class="brand-mark">Bootstrap</a>
+
+        <div class="nav-center d-none d-lg-flex">
+            <div class="desktop-nav">
+                <ul class="navbar-nav flex-row gap-0">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="dropdown-item">Service 1</a></li>
+                            <li><a href="#" class="dropdown-item">Service 2</a></li>
+                            <li><a href="#" class="dropdown-item">Service 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Logged-in: avatar + dropdown (desktop) -->
+        <div class="auth-user dropdown logged_in_lg ms-auto">
+            <a href="#" class="d-flex align-items-center nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                <span class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white"
+                      style="width:32px;height:32px;font-size:0.8rem;font-weight:600;">A</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end profile_menu">
+                <li class="px-3 py-2">
+                    <div style="font-size:0.9rem;font-weight:600;">Anonymous</div>
+                </li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item dropdown_profile" href="#">Profile</a></li>
+                <li>
+                    <label for="auth-guest" class="dropdown-item text-danger dropdown_profile_log_out" style="cursor:pointer;">Logout</label>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Logged-out: login / sign-up buttons (desktop) -->
+        <div class="nav-auth d-none d-lg-flex logged_out">
+            <a href="#modal_login"    data-bs-toggle="modal" class="btn-ghost">Log In</a>
+            <a href="#modal_register" data-bs-toggle="modal" class="btn-solid">Sign Up</a>
+        </div>
+
+        <button class="mobile-toggle d-lg-none" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvas_nav">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 3.5H15V5H1V3.5ZM1 7.5H15V9H1V7.5ZM15 11.5H1V13H15V11.5Z" fill="currentColor"/>
+            </svg>
+        </button>
+
+        <!-- Mobile offcanvas nav -->
+        <div class="offcanvas offcanvas-end d-lg-none" id="offcanvas_nav">
+            <div class="offcanvas-header">
+                <a href="#" class="brand-mark">Bootstrap</a>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body px-4 pt-3">
+                <!-- Logged-in: avatar + dropdown (mobile) -->
+                <div class="logged_in_sm justify-content-center mb-3">
+                    <div class="dropdown">
+                        <a href="#" class="d-flex align-items-center gap-2 nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <span class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white"
+                                  style="width:32px;height:32px;font-size:0.8rem;font-weight:600;">A</span>
+                            <span style="font-size:0.9rem;font-weight:600;">Anonymous</span>
+                        </a>
+                        <ul class="dropdown-menu profile_menu">
+                            <li><a class="dropdown-item dropdown_profile" href="#">Profile</a></li>
+                            <li>
+                                <label for="auth-guest" class="dropdown-item text-danger dropdown_profile" style="cursor:pointer;">Logout</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <ul class="dropdown-menu ps-2">
+                            <li><a href="#" class="dropdown-item">Service 1</a></li>
+                            <li><a href="#" class="dropdown-item">Service 2</a></li>
+                            <li><a href="#" class="dropdown-item">Service 3</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+
+                <!-- Mobile theme switcher -->
+                <div class="mobile-theme-row">
+                    <div class="theme-switcher">
+                        <label class="theme-btn" for="th-light" title="Light" aria-label="Light mode">
+                            <svg height="16" width="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.75 1V0.25H6.25V1V1.25V2H7.75V1.25V1ZM7 9C8.10457 9 9 8.10457 9 7C9 5.89543 8.10457 5 7 5C5.89543 5 5 5.89543 5 7C5 8.10457 5.89543 9 7 9ZM7 10.5C8.933 10.5 10.5 8.933 10.5 7C10.5 5.067 8.933 3.5 7 3.5C5.067 3.5 3.5 5.067 3.5 7C3.5 8.933 5.067 10.5 7 10.5ZM7.75 12V12.75V13V13.75H6.25V13V12.75V12H7.75ZM12 6.25H12.75H13H13.75V7.75H13H12.75H12V6.25ZM1 6.25H0.25V7.75H1H1.25H2V6.25H1.25H1ZM10.0052 2.93414L10.5355 2.40381L10.7123 2.22703L11.2426 1.6967L12.3033 2.75736L11.773 3.28769L11.5962 3.46447L11.0659 3.9948L10.0052 2.93414ZM2.22703 10.7123L1.6967 11.2426L2.75736 12.3033L3.28769 11.773L3.46447 11.5962L3.9948 11.0659L2.93414 10.0052L2.40381 10.5355L2.22703 10.7123ZM2.93414 3.9948L2.40381 3.46447L2.22703 3.28769L1.6967 2.75736L2.75736 1.6967L3.28769 2.22703L3.46447 2.40381L3.9948 2.93414L2.93414 3.9948ZM10.7123 11.773L11.2426 12.3033L12.3033 11.2426L11.773 10.7123L11.5962 10.5355L11.0659 10.0052L10.0052 11.0659L10.5355 11.5962L10.7123 11.773Z" fill="currentColor" transform="translate(1.25,1.25) scale(0.857)"/>
+                            </svg>
+                        </label>
+                        <label class="theme-btn" for="th-system" title="System" aria-label="System preference">
+                            <svg height="16" width="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3.25C0.5 1.45507 1.95507 0 3.75 0H8.25C10.0449 0 11.5 1.45507 11.5 3.25V11.25V12H10.75H1.25H0.5V11.25V3.25ZM3.75 1.5C2.7835 1.5 2 2.2835 2 3.25V10.5H10V3.25C10 2.2835 9.2165 1.5 8.25 1.5H3.75ZM3 3.5C3 2.94772 3.44772 2.5 4 2.5H8C8.55228 2.5 9 2.94772 9 3.5V7H3V3.5ZM6.5 9.5H9V8H6.5V9.5Z" fill="currentColor" transform="translate(2.5,2)"/>
+                            </svg>
+                        </label>
+                        <label class="theme-btn" for="th-dark" title="Dark" aria-label="Dark mode">
+                            <svg height="16" width="16" viewBox="0 0 16 16" fill="none">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 0.25V1V1.5H11L11.75 1.5V3H11H10.5V3.5V4.25H9V3.5V3H8.5H7.75V1.5H8.5H9V1V0.25H10.5ZM3.25514 2.75496C2.33413 3.53491 1.75 4.69972 1.75 6C1.75 8.34721 3.65279 10.25 6 10.25C7.30029 10.25 8.4651 9.66587 9.24505 8.74485C9.16377 8.74827 9.08207 8.74999 9 8.74999C5.82436 8.74999 3.25 6.17563 3.25 2.99999C3.25 2.91792 3.25172 2.83623 3.25514 2.75496ZM0.25 6C0.25 3.51072 1.83142 1.39271 4.042 0.592193L5.00256 1.55275C4.83933 2.00347 4.75 2.49047 4.75 2.99999C4.75 5.3472 6.65279 7.24999 9 7.24999C9.50953 7.24999 9.99653 7.16065 10.4473 6.99743L11.4078 7.95798C10.6073 10.1686 8.48929 11.75 6 11.75C2.82436 11.75 0.25 9.17564 0.25 6Z" fill="currentColor" transform="translate(2.25,2.25)"/>
+                            </svg>
+                        </label>
+                    </div>
+                </div>
+
+                <hr>
+
+                <!-- Logged-out: login / sign-up buttons (mobile) -->
+                <div class="d-flex nav-auth gap-5 mt-2 logged_out px-3 justify-content-center">
+                    <a href="#modal_login"    data-bs-toggle="modal" data-bs-dismiss="offcanvas" class="btn-ghost text-center ps-2">Log In</a>
+                    <a href="#modal_register" data-bs-toggle="modal" data-bs-dismiss="offcanvas" class="btn-solid text-center">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <div class="d-flex mt-2">
+        <div class="sidebar d-none d-lg-block">
+            <ul class="nav nav-pills flex-column p-3 tab_bar vh-100">
+                <li class="nav-item"><a href="#chtml" class="nav-link active" data-bs-toggle="tab">Html</a></li>
+                <li class="nav-item"><a href="#cjs"   class="nav-link"        data-bs-toggle="tab">JavaScript</a></li>
+                <li class="nav-item"><a href="#ccss"  class="nav-link"        data-bs-toggle="tab">CSS</a></li>
+                <li class="nav-item"><a href="#cpy"  class="nav-link"        data-bs-toggle="tab">Python</a></li>
+                <li class="nav-item"><a href="#cts"  class="nav-link"        data-bs-toggle="tab">Typescript</a></li>
+                <li class="nav-item"><a href="#crt"  class="nav-link"        data-bs-toggle="tab">React</a></li>
+            </ul>
+        </div>
+        <div class="flex-grow-1">
+            <div class="tab-content mt-3 mx-3">
+                <div class="tab-pane fade show active" id="chtml">
+                    <h2>HTML</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>HTML #2</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, temporibus totam, porro doloribus exercitationem voluptas, nihil non recusandae rem harum expedita consectetur! Error quas maxime pariatur ullam hic nobis autem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>HTML #3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam minima harum quasi aspernatur itaque consequuntur est praesentium repellendus quam pariatur dolorum iure, hic a nulla odit ea tenetur sint laudantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio fugit, natus veritatis cum tempora, officia temporibus, nihil laboriosam fuga esse dicta quasi obcaecati eius neque quia in architecto animi.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>HTML #4</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                </div>
+                <div class="tab-pane fade" id="cjs">
+                    <h2>JavaScript</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>JavaScript #2</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, temporibus totam, porro doloribus exercitationem voluptas, nihil non recusandae rem harum expedita consectetur! Error quas maxime pariatur ullam hic nobis autem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>JavaScript #3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam minima harum quasi aspernatur itaque consequuntur est praesentium repellendus quam pariatur dolorum iure, hic a nulla odit ea tenetur sint laudantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio fugit, natus veritatis cum tempora, officia temporibus, nihil laboriosam fuga esse dicta quasi obcaecati eius neque quia in architecto animi.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>JavaScript #4</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                </div>
+                <div class="tab-pane fade" id="ccss">
+                    <h2>CSS</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>CSS #2</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, temporibus totam, porro doloribus exercitationem voluptas, nihil non recusandae rem harum expedita consectetur! Error quas maxime pariatur ullam hic nobis autem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>CSS #3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam minima harum quasi aspernatur itaque consequuntur est praesentium repellendus quam pariatur dolorum iure, hic a nulla odit ea tenetur sint laudantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio fugit, natus veritatis cum tempora, officia temporibus, nihil laboriosam fuga esse dicta quasi obcaecati eius neque quia in architecto animi.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>CSS #4</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                </div>
+                <div class="tab-pane fade" id="cpy">
+                    <h2>Python</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                 
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>Python #2</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, temporibus totam, porro doloribus exercitationem voluptas, nihil non recusandae rem harum expedita consectetur! Error quas maxime pariatur ullam hic nobis autem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>Python #3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam minima harum quasi aspernatur itaque consequuntur est praesentium repellendus quam pariatur dolorum iure, hic a nulla odit ea tenetur sint laudantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio fugit, natus veritatis cum tempora, officia temporibus, nihil laboriosam fuga esse dicta quasi obcaecati eius neque quia in architecto animi.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>Python #4</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                </div>
+                <div class="tab-pane fade" id="cts">
+                    <h2>TypeScript</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+             
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>TypeScript #2</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, temporibus totam, porro doloribus exercitationem voluptas, nihil non recusandae rem harum expedita consectetur! Error quas maxime pariatur ullam hic nobis autem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>TypeScript #3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam minima harum quasi aspernatur itaque consequuntur est praesentium repellendus quam pariatur dolorum iure, hic a nulla odit ea tenetur sint laudantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio fugit, natus veritatis cum tempora, officia temporibus, nihil laboriosam fuga esse dicta quasi obcaecati eius neque quia in architecto animi.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>TypeScript #4</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                </div>
+                <div class="tab-pane fade" id="crt">
+                    <h2>React</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>React #2</h2>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, temporibus totam, porro doloribus exercitationem voluptas, nihil non recusandae rem harum expedita consectetur! Error quas maxime pariatur ullam hic nobis autem?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>React #3</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam minima harum quasi aspernatur itaque consequuntur est praesentium repellendus quam pariatur dolorum iure, hic a nulla odit ea tenetur sint laudantium?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam distinctio fugit, natus veritatis cum tempora, officia temporibus, nihil laboriosam fuga esse dicta quasi obcaecati eius neque quia in architecto animi.Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                    <h2>React #4</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur, voluptatibus doloremque exercitationem atque rem hic deserunt nihil unde quas, pariatur totam, molestias explicabo repudiandae autem facilis repellat error quidem quaerat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sidebar offcanvas -->
+    <div class="offcanvas offcanvas-start" id="offcanvas_id" data-bs-scroll="true">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav nav-pills flex-column p-3 tab_bar">
+                <li class="nav-item"><a href="#chtml" class="nav-link active" data-bs-toggle="tab" data-bs-dismiss="offcanvas">Html</a></li>
+                <li class="nav-item"><a href="#cjs"   class="nav-link"        data-bs-toggle="tab" data-bs-dismiss="offcanvas">JavaScript</a></li>
+                <li class="nav-item"><a href="#ccss"  class="nav-link"        data-bs-toggle="tab" data-bs-dismiss="offcanvas">CSS</a></li>
+                <li class="nav-item"><a href="#cpy"  class="nav-link"        data-bs-toggle="tab">Python</a></li>
+                <li class="nav-item"><a href="#cts"  class="nav-link"        data-bs-toggle="tab">Typescript</a></li>
+                <li class="nav-item"><a href="#crt"  class="nav-link"        data-bs-toggle="tab">React</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         LOGIN MODAL
+         ══════════════════════════════════════════════════════════════ -->
+    <div class="modal" data-bs-backdrop="static" id="modal_login">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content position-relative">
+                <button type="button" class="auth-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+                <div class="modal-body py-3">
+                    <h1 class="auth-title">Login</h1>
+                    <form onsubmit="return false;" class="mt-3">
+                        <input class="auth-email-input" type="email" placeholder="Email Address" autocomplete="email">
+                        <!-- label targets auth-logged radio to log in, and data-bs-dismiss closes the modal -->
+                        <label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Email</label>
+                    </form>
+                    <hr class="auth-divider">
+                    <label class="auth-social-btn mt-3" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+                        Continue with Google
+                    </label>
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 16 16" fill="#000"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        Continue with GitHub
+                    </label>
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+                        Continue with Apple
+                    </label>
+                    <label class="auth-social-btn mt-2" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                        Continue with SAML SSO
+                    </label>
+                    <div class="auth-signup-link mt-5">
+                        Don't have an account? <a href="#modal_register" data-bs-toggle="modal">Sign Up</a>
+                    </div>
+                </div>
+                <div class="auth-footer mt-2">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- ══════════════════════════════════════════════════════════════
+         REGISTER MODAL 
+         ══════════════════════════════════════════════════════════════ -->
+    <div class="modal" data-bs-backdrop="static" id="modal_register">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content position-relative">
+                <button type="button" class="auth-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+                <div class="modal-body">
+                    <h1 class="auth-title">Let's create<br>your account</h1>
+
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 48 48">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                            <path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        </svg>
+                        Continue with Google
+                    </label>
+
+                    <label class="auth-social-btn btn-dark-fill" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 16 16" fill="#fff">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        Continue with GitHub
+                    </label>
+
+                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#000">
+                            <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+                        </svg>
+                        Continue with Apple
+                    </label>
+
+                    <div class="auth-email-link">
+                        <a href="#" onclick="return false;">Continue with Email</a>
+                    </div>
+                    <div class="auth-signup-link">
+                        Already have an account? <a href="#modal_login" data-bs-toggle="modal">Log In</a>
+                    </div>
+                </div>
+                <div class="auth-footer">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         RESET PASSWORD MODAL
+         ══════════════════════════════════════════════════════════════ -->
+    <div class="modal" data-bs-backdrop="static" id="modal_reset">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Reset Password</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
+                            <div class="form-floating">
+                                <input class="form-control" type="password" name="password" id="reset_password" placeholder="Password">
+                                <label for="reset_password">Password</label>
+                            </div>
+                        </div>
+                        <div class="input-group mt-3">
+                            <span class="input-group-text"><i class="bi bi-shield-lock-fill"></i></span>
+                            <div class="form-floating">
+                                <input class="form-control" type="password" name="cpassword" id="reset_cpassword" placeholder="Confirm Password">
+                                <label for="reset_cpassword">Confirm Password</label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-lg w-100 mt-3" data-bs-dismiss="modal" type="submit">Reset password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         FOOTER
+         ══════════════════════════════════════════════════════════════ -->
+    <footer class="site-footer  mt-5">
+        <div class="container">
+
+            <!-- ── Row 1: 6-column link grid ── -->
+            <div class="row footer-grid gy-4 mb-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Get Started</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Introduction</a></li>
+                        <li><a href="#">Download</a></li>
+                        <li><a href="#">Templates</a></li>
+                        <li><a href="#">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Layout</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Grid System</a></li>
+                        <li><a href="#">Containers</a></li>
+                        <li><a href="#">Columns</a></li>
+                        <li><a href="#">Gutters</a></li>
+                        <li><a href="#">Breakpoints</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Components</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">Cards</a></li>
+                        <li><a href="#">Modals</a></li>
+                        <li><a href="#">Navbar</a></li>
+                        <li><a href="#">Carousel</a></li>
+                        <li><a href="#">Offcanvas</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Utilities</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Spacing</a></li>
+                        <li><a href="#">Typography</a></li>
+                        <li><a href="#">Colors</a></li>
+                        <li><a href="#">Flex</a></li>
+                        <li><a href="#">Display</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Resources</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Themes</a></li>
+                        <li><a href="#">Icons</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Changelog <span class="footer-badge">New</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Learn</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Snippets</a></li>
+                        <li><a href="#">Playground <span class="footer-badge">New</span></a></li>
+                        <li><a href="#">Academy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="border-color: var(--bs-border-color, #e5e5e5); margin: 0 0 2.5rem 0;">
+
+            <div class="row footer-grid gy-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Customize</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Sass Variables</a></li>
+                        <li><a href="#">CSS Variables</a></li>
+                        <li><a href="#">Optimize</a></li>
+                        <li><a href="#">Dark Mode <span class="footer-badge">New</span></a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Forms</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Inputs</a></li>
+                        <li><a href="#">Select</a></li>
+                        <li><a href="#">Checks & Radios</a></li>
+                        <li><a href="#">Validation</a></li>
+                        <li><a href="#">Input Groups</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Helpers</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Clearfix</a></li>
+                        <li><a href="#">Ratio</a></li>
+                        <li><a href="#">Position</a></li>
+                        <li><a href="#">Stacks</a></li>
+                        <li><a href="#">Visually Hidden</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Company</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Legal</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <h6 class="footer-heading">Community</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">Open Source</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Contributors</a></li>
+                        <li>
+                            <a href="#" class="footer-social-link">
+                                <i class="bi bi-github"></i> GitHub
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-social-link">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-social-link">
+                                <i class="bi bi-twitter-x"></i> X
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer-social-link">
+                                <i class="bi bi-youtube"></i> YouTube
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2 d-flex align-items-start justify-content-lg-end">
+                    <a href="#" class="footer-brand-mark">B</a>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+
+                <div class="theme-switcher" role="group" aria-label="Theme">
+                    <label class="theme-btn" for="th-light" title="Light mode" aria-label="Light mode">
+                        <svg height="16" width="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.75 1V0.25H6.25V1V1.25V2H7.75V1.25V1ZM7 9C8.10457 9 9 8.10457 9 7C9 5.89543 8.10457 5 7 5C5.89543 5 5 5.89543 5 7C5 8.10457 5.89543 9 7 9ZM7 10.5C8.933 10.5 10.5 8.933 10.5 7C10.5 5.067 8.933 3.5 7 3.5C5.067 3.5 3.5 5.067 3.5 7C3.5 8.933 5.067 10.5 7 10.5ZM7.75 12V12.75V13V13.75H6.25V13V12.75V12H7.75ZM12 6.25H12.75H13H13.75V7.75H13H12.75H12V6.25ZM1 6.25H0.25V7.75H1H1.25H2V6.25H1.25H1ZM10.0052 2.93414L10.5355 2.40381L10.7123 2.22703L11.2426 1.6967L12.3033 2.75736L11.773 3.28769L11.5962 3.46447L11.0659 3.9948L10.0052 2.93414ZM2.22703 10.7123L1.6967 11.2426L2.75736 12.3033L3.28769 11.773L3.46447 11.5962L3.9948 11.0659L2.93414 10.0052L2.40381 10.5355L2.22703 10.7123ZM2.93414 3.9948L2.40381 3.46447L2.22703 3.28769L1.6967 2.75736L2.75736 1.6967L3.28769 2.22703L3.46447 2.40381L3.9948 2.93414L2.93414 3.9948ZM10.7123 11.773L11.2426 12.3033L12.3033 11.2426L11.773 10.7123L11.5962 10.5355L11.0659 10.0052L10.0052 11.0659L10.5355 11.5962L10.7123 11.773Z" fill="currentColor" transform="translate(1.25,1.25) scale(0.857)"/>
+                        </svg>
+                    </label>
+                    <label class="theme-btn" for="th-system" title="System preference" aria-label="System preference">
+                        <svg height="16" width="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3.25C0.5 1.45507 1.95507 0 3.75 0H8.25C10.0449 0 11.5 1.45507 11.5 3.25V11.25V12H10.75H1.25H0.5V11.25V3.25ZM3.75 1.5C2.7835 1.5 2 2.2835 2 3.25V10.5H10V3.25C10 2.2835 9.2165 1.5 8.25 1.5H3.75ZM3 3.5C3 2.94772 3.44772 2.5 4 2.5H8C8.55228 2.5 9 2.94772 9 3.5V7H3V3.5ZM6.5 9.5H9V8H6.5V9.5Z" fill="currentColor" transform="translate(2.5,2)"/>
+                        </svg>
+                    </label>
+                    <label class="theme-btn" for="th-dark" title="Dark mode" aria-label="Dark mode">
+                        <svg height="16" width="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M10.5 0.25V1V1.5H11L11.75 1.5V3H11H10.5V3.5V4.25H9V3.5V3H8.5H7.75V1.5H8.5H9V1V0.25H10.5ZM3.25514 2.75496C2.33413 3.53491 1.75 4.69972 1.75 6C1.75 8.34721 3.65279 10.25 6 10.25C7.30029 10.25 8.4651 9.66587 9.24505 8.74485C9.16377 8.74827 9.08207 8.74999 9 8.74999C5.82436 8.74999 3.25 6.17563 3.25 2.99999C3.25 2.91792 3.25172 2.83623 3.25514 2.75496ZM0.25 6C0.25 3.51072 1.83142 1.39271 4.042 0.592193L5.00256 1.55275C4.83933 2.00347 4.75 2.49047 4.75 2.99999C4.75 5.3472 6.65279 7.24999 9 7.24999C9.50953 7.24999 9.99653 7.16065 10.4473 6.99743L11.4078 7.95798C10.6073 10.1686 8.48929 11.75 6 11.75C2.82436 11.75 0.25 9.17564 0.25 6Z" fill="currentColor" transform="translate(2.25,2.25)"/>
+                        </svg>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pb-4 text-center" style="font-size: 0.78rem; color: var(--bs-secondary-color, rgba(17,17,17,.45));">
+                © 2026 Bootstrap. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
