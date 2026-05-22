@@ -1,0 +1,81 @@
+:root {
+    --medi-primary: #005146;
+    --medi-primary-hover: #007563;
+    --medi-mint: #b9f7e3;
+    --medi-soft: #83dbbe;
+    --medi-bg: #e1fff5;
+    --medi-card-bg: #008170;
+    --medi-white: #ffffff;
+    --medi-text: #1a2e2b;
+    --medi-border: #b6e9d7;
+    --medi-focus-ring: rgba(0,81,70,0.25);
+    --medi-nav-bg: rgba(0,81,70,0.75);
+    --medi-nav-link: #e1fff5;
+    --medi-nav-hover: #0ade97;
+    --medi-dropdown-bg: rgba(191,220,210,0.85);
+    --medi-offcanvas-bg: rgba(0,81,70,0.92);
+    --medi-shadow: rgba(0,81,70,0.2);
+    --navbar-height: 68px;
+
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 30px;
+    --radius-full: 999px;
+    --shadow-sm: 0 8px 20px rgba(0,0,0,0.08);
+    --shadow-md: 0 15px 30px rgba(0,81,70,0.2);
+    --shadow-lg: 0 18px 40px rgba(0,0,0,0.08);
+    --transition-base: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--medi-bg);
+    font-family: 'Geist', 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color: var(--medi-text);
+    padding-top: var(--navbar-height);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, a, button, input, textarea,
+.brand, .hero-title, .hero-copy, .hero-btn, .problem_link,
+.section-title, .faq_title, .form-label, .accordion-button,
+.accordion-body, .modal-title, .form_boxes, .nav_link_color {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.page-content {
+    display: none;
+}
+
+#page-home {
+    display: block;
+}
+
+.page-content:target {
+    display: block;
+}
+
+body:has(.page-content:target) #page-home {
+    display: none;
+}
+
+#page-home:target {
+    display: block !important;
+}
