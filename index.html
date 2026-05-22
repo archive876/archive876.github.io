@@ -58,7 +58,7 @@
                                 <li>
                                     <div class="row g-1 mt-1">
                                         <div class="col-md-6"><a class="dropdown-item" href="#page-industry"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-exclamation-triangle-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Industry</h6><p>Environmental impact</p></div></div></a></div>
-                                        <div class="col-md-6"><a class="dropdown-item" href="#page-home"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-tree-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Environment</h6><p>Pollution impact</p></div></div></a></div>
+                                        <div class="col-md-6"><a class="dropdown-item" href="#page-eco-impact"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-tree-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Environment</h6><p>Pollution impact</p></div></div></a></div>
                                     </div>
                                 </li>
                             </ul>
@@ -72,6 +72,12 @@
                                         <div class="col-md-6"><a class="dropdown-item" href="#page-smart-packaging"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-box-seam-fill" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Smart Packaging</h6><p>Freshness tracking</p></div></div></a></div>
                                     </div>
                                 </li>
+                                <li>
+                                    <div class="row g-1 mt-1">
+                                        <div class="col-md-6"><a class="dropdown-item" href="#page-modern-tech"><div class="row g-0 align-items-center"><div class="col-3 text-center dropdown_text_icon_box"><i class="bi bi-cpu" aria-hidden="true"></i></div><div class="col-9 dropdown_text_section ps-2"><h6>Modern Technology</h6><p>Sensor & Apps</p></div></div></a></div>
+                                        <div class="col-md-6"></div>
+                                    </div>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item" role="none"><a class="nav-link nav_link_color" href="#page-awareness" role="menuitem">Awareness</a></li>
@@ -81,7 +87,6 @@
                         <li class="nav-item" role="none"><a class="nav-link nav_link_color" href="#page-about" role="menuitem">Get In Touch</a></li>
                     </ul>
 
-                    <!-- Logged-in user dropdown (large screens) -->
                     <div class="auth-user dropdown logged_in_lg me-lg-4">
                         <a href="#" class="d-flex align-items-center nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="User menu">
                             <span class="rounded-circle bg-secondary d-flex align-items-center justify-content-center text-white" style="width:32px;height:32px;font-size:0.8rem;" aria-hidden="true">A</span>
@@ -94,7 +99,7 @@
                         </ul>
                     </div>
 
-                    <!-- Guest login button (large screens) -->
+
                     <div class="dropdown logged_out d-none d-lg-flex pe-lg-3">
                         <a href="#" class="nav-user-icon-btn dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Login or sign up">
                             <i class="bi bi-person-fill" aria-hidden="true"></i>
@@ -131,8 +136,10 @@
                             <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-consumers" data-bs-dismiss="offcanvas">Consumers</a></li>
                             <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-unsafe-food" data-bs-dismiss="offcanvas">Unsafe Food</a></li>
                             <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-ai-detection" data-bs-dismiss="offcanvas">AI Detection</a></li>
-                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-industry" data-bs-dismiss="offcanvas">Industry Impact</a></li>
                             <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-smart-packaging" data-bs-dismiss="offcanvas">Smart Packaging</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-modern-tech" data-bs-dismiss="offcanvas">Modern Technology</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-eco-impact" data-bs-dismiss="offcanvas">Environment</a></li>
+                            <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-industry" data-bs-dismiss="offcanvas">Industry Impact</a></li>
                             <li class="nav-item mt-2"><a class="nav-link nav_link_color" href="#page-about" data-bs-dismiss="offcanvas">About Us</a></li>
                         </ul>
                         <hr style="border-color:rgba(255,255,255,0.3);">
@@ -394,9 +401,8 @@
         </div>
     </div>
 
-    <!-- ═══════════════ PAGE: UNSAFE FOOD (UPDATED) ═══════════════ -->
+    <!-- ═══════════════ PAGE: UNSAFE FOOD ═══════════════ -->
     <div class="page-content unsafe-food-page-body" id="page-unsafe-food">
-        <!-- Horizontal navigation bar replaces old sidebar and mobile button -->
         <div class="container py-4">
             <div class="text-center mb-4">
                 <h1 class="fw-bold text-white">Unsafe Food Awareness in Urban Areas</h1>
@@ -406,8 +412,6 @@
                 </nav>
             </div>
         </div>
-
-        <!-- Content sections (centered, full width) -->
         <div class="container">
             <section id="issues" class="section-spy" aria-labelledby="issues-heading">
                 <h2 class="mb-4 text-white" id="issues-heading">Issues</h2>
@@ -424,7 +428,6 @@
                     <div class="col-md-6"><article class="card-glass"><img src="imgs/jelly.jpg" alt="Imported jelly with banned food dyes" loading="lazy"><div class="p-3"><span class="unsafe_food_title_badge">Artificial coloring</span><p class="mt-2">In Myanmar, many imported foods contain banned levels of food dyes which can stain tongues and cause food poisoning in urban consumers.</p></div></article></div>
                 </div>
             </section>
-
             <section id="consequences" class="section-spy" aria-labelledby="consequences-heading">
                 <h2 class="mb-4 text-white" id="consequences-heading">Consequences</h2>
                 <div class="row g-4">
@@ -437,8 +440,6 @@
                 </div>
             </section>
         </div>
-
-        <!-- No more mobile sidebar or offcanvas for unsafe food page -->
     </div>
 
     <!-- ═══════════════ PAGE: AI DETECTION ═══════════════ -->
@@ -530,6 +531,92 @@
         </div>
     </div>
 
+    <!-- ═══════════════ PAGE: MODERN TECHNOLOGY (NEW) ═══════════════ -->
+    <div class="page-content" id="page-modern-tech">
+        <div class="technology_section py-5">
+            <div class="container">
+                <div class="text-center technology_heading">
+                    <span class="mini_badge">SMART FOOD INDUSTRY</span>
+                    <h1>Modern Technologies in Food Industries</h1>
+                    <p>Smart technologies are transforming food industries by improving safety, efficiency, sustainability, and product quality through automation, AI, sensors, and advanced digital systems.</p>
+                </div>
+                <div class="row align-items-center feature_box">
+                    <div class="col-lg-5 mb-4 mb-lg-0" data-aos="fade-right">
+                        <div class="feature_image">
+                            <img src="imgs/future_food.png" alt="Food Technology">
+                            <div class="floating_card">
+                                <h2>85%</h2>
+                                <p>Faster food monitoring using smart technology</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7" data-aos="fade-left">
+                        <div class="feature_content">
+                            <span class="section_label">FUTURE OF FOOD SAFETY</span>
+                            <h2>Smart Systems for <span>Safer Food Production</span></h2>
+                            <p>Modern food industries now use intelligent systems to improve hygiene, reduce contamination, monitor food quality, and create more sustainable production methods.</p>
+                            <div class="feature_list">
+                                <div class="feature_item2"><i class="bi bi-cpu-fill"></i><div><h5>AI Monitoring</h5><p>AI detects food contamination and quality issues quickly.</p></div></div>
+                                <div class="feature_item2"><i class="bi bi-wifi"></i><div><h5>IoT Tracking</h5><p>Smart systems track storage conditions and freshness.</p></div></div>
+                                <div class="feature_item2"><i class="bi bi-recycle"></i><div><h5>Sustainable Production</h5><p>Technology helps reduce waste and improve efficiency.</p></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="technology_showcase mt-5">
+                    <div class="timeline_side" data-aos="fade-right">
+                        <div class="timeline_line"></div>
+                        <div class="timeline_card"><div class="timeline_icon"><i class="bi bi-cpu-fill"></i></div><div class="timeline_content"><span>01</span><h4>Artificial Intelligence</h4><p>AI systems detect contamination, damaged products, and food quality issues faster than manual inspection.</p></div></div>
+                        <div class="timeline_card"><div class="timeline_icon"><i class="bi bi-router-fill"></i></div><div class="timeline_content"><span>02</span><h4>Internet of Things</h4><p>IoT devices monitor freshness, temperature, and storage conditions in real time.</p></div></div>
+                        <div class="timeline_card"><div class="timeline_icon"><i class="bi bi-robot"></i></div><div class="timeline_content"><span>03</span><h4>Automation & Robotics</h4><p>Smart robots improve food packaging, sorting, labeling, and industrial hygiene.</p></div></div>
+                        <div class="timeline_card"><div class="timeline_icon"><i class="bi bi-diagram-3"></i></div><div class="timeline_content"><span>04</span><h4>Blockchain & Digital Traceability</h4><p>Blockchain tracks food from farm to table, ensuring transparency and preventing fraud.</p></div></div>
+                    </div>
+                    <div class="showcase_panel" data-aos="fade-left">
+                        <div class="panel_overlay"></div>
+                        <div class="showcase_content">
+                            <span class="future_tag">FUTURE TECHNOLOGY</span>
+                            <h2>Building a <span>Smarter</span> Food Industry</h2>
+                            <p>Modern industries now use intelligent monitoring systems, smart packaging, AI detection, and digital tracking to create safer, cleaner, and more sustainable food production.</p>
+                            <div class="stats_grid">
+                                <div class="stat_box"><h3>24/7</h3><p>Real-Time Monitoring</p></div>
+                                <div class="stat_box"><h3>AI</h3><p>Smart Detection Systems</p></div>
+                                <div class="stat_box"><h3>IoT</h3><p>Connected Food Tracking</p></div>
+                                <div class="stat_box"><h3>85%</h3><p>Faster Quality Control</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ PAGE: ENVIRONMENTAL SYSTEM (linked from Problems → Environment) ═══════════════ -->
+    <div class="page-content" id="page-eco-impact">
+        <div class="hero-eco text-center">
+            <span class="badge-soft">ENVIRONMENTAL SYSTEM</span>
+            <h1>Building a <span>Sustainable</span> Food Future</h1>
+            <p>The food industry impacts climate, land, water, and waste systems. Modern technology helps reduce damage and improve efficiency globally.</p>
+        </div>
+        <div class="container eco-features-section">
+            <div class="section-title-eco" data-aos="fade-up">
+                <h2>Key Environmental Impacts</h2>
+                <p>Understanding how food systems affect our planet.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up"><div class="feature-eco"><div class="icon-eco"><i class="bi bi-cloud"></i></div><h5>Climate Change</h5><p>Greenhouse gases from agriculture and transport.</p></div></div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="feature-eco"><div class="icon-eco"><i class="bi bi-tree"></i></div><h5>Deforestation</h5><p>Forest clearing for farming reduces biodiversity.</p></div></div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="feature-eco"><div class="icon-eco"><i class="bi bi-droplet"></i></div><h5>Water Usage</h5><p>Excess irrigation strains freshwater resources.</p></div></div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="feature-eco"><div class="icon-eco"><i class="bi bi-trash3"></i></div><h5>Waste</h5><p>Packaging and food waste pollute ecosystems.</p></div></div>
+            </div>
+            <div class="split-eco mt-5">
+                <div data-aos="fade-right"><h2 class="fw-bold">Environmental Impact Overview</h2><p class="text-muted">Food production is responsible for a large share of global emissions and resource usage. Improvements in technology can reduce impact.</p><div class="progress-box-eco"><div class="progress-label"><span>Water Usage</span><span>70%</span></div><div class="progress"><div class="progress-bar" style="width:70%"></div></div><div class="progress-label"><span>CO₂ Emissions</span><span>55%</span></div><div class="progress"><div class="progress-bar" style="width:55%"></div></div><div class="progress-label"><span>Food Waste</span><span>40%</span></div><div class="progress"><div class="progress-bar" style="width:40%"></div></div></div></div>
+                <div data-aos="fade-left"><div class="image-card-eco"><img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="environmental impact"></div></div>
+            </div>
+            <div class="stats-eco"><div class="stat-eco" data-aos="zoom-in"><h3>70%</h3><p>Water Usage</p></div><div class="stat-eco" data-aos="zoom-in" data-aos-delay="100"><h3>25%</h3><p>CO₂ Emissions</p></div><div class="stat-eco" data-aos="zoom-in" data-aos-delay="200"><h3>1/3</h3><p>Food Wasted</p></div><div class="stat-eco" data-aos="zoom-in" data-aos-delay="300"><h3>80%</h3><p>Land Usage</p></div></div>
+            <div class="timeline-eco"><div class="section-title-eco" data-aos="fade-up"><h2>How Impact Happens</h2></div><div class="step-eco" data-aos="fade-right"><div class="num-eco">1</div><div class="step-box-eco"><h5>Production</h5><p>Farming uses water, land, and fertilizers at large scale.</p></div></div><div class="step-eco" data-aos="fade-right" data-aos-delay="100"><div class="num-eco">2</div><div class="step-box-eco"><h5>Processing & Transport</h5><p>Factories and shipping increase emissions.</p></div></div><div class="step-eco" data-aos="fade-right" data-aos-delay="200"><div class="num-eco">3</div><div class="step-box-eco"><h5>Consumption</h5><p>Retail and households generate waste and packaging.</p></div></div></div>
+        </div>
+    </div>
+
     <!-- ═══════════════ PAGE: ABOUT US ═══════════════ -->
     <div class="page-content" id="page-about" style="background: #f4faf7;">
         <section class="about_contact_section" aria-labelledby="about-heading">
@@ -561,56 +648,17 @@
         <div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content text-center p-4"><div class="modal-body"><div style="width:70px;height:70px;margin:auto;border-radius:50%;background:linear-gradient(135deg,#008170,#00b89c);display:flex;align-items:center;justify-content:center;color:white;font-size:32px;" aria-hidden="true"><i class="bi bi-check-lg"></i></div><h3 class="mt-4 fw-bold">Thank You!</h3><p class="text-muted">Your message has been sent successfully. We will contact you soon.</p><button class="btn btn-success px-4 mt-2" data-bs-dismiss="modal">Close</button></div></div></div></div>
     </div>
 
-    <!-- ═══════════════ MODALS ═══════════════ -->
+    <!-- ═══════════════ MODALS (unchanged) ═══════════════ -->
     <div class="modal fade" data-bs-backdrop="static" id="succcessModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Question Submitted</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body text-center"><h4>Thank You!</h4><p>Your question has been successfully sent.</p></div><div class="modal-footer justify-content-center"><button class="btn btn-success rounded-pill" data-bs-dismiss="modal">OK</button></div></div></div></div>
-
-    <!-- Large Login Modal -->
-    <div class="modal fade" data-bs-backdrop="static" id="modal_login" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3 btn-close-white" data-bs-dismiss="modal" style="z-index:10;" aria-label="Close login modal"></button><div class="row g-0"><div class="col-md-6 modal-image-col" style="background-image: url('imgs/mohinga.jpg');" role="img" aria-label="Myanmar traditional dish"></div><div class="col-md-6 modal-form-col"><div class="form-scroll"><h2 class="auth-title">Welcome back</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email address"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><div class="text-end mb-3"><a href="#modal_forgot" data-bs-toggle="modal" style="color: var(--medi-primary);">Forgot password?</a></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Log In</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill">
-                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
-                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-                        Continue with Google
-                    </label>
-                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
-                        <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                        Continue with GitHub
-                    </label>
-                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
-                        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-                        Continue with Apple
-                    </label>
-                    <hr class="auth-divider">
-                    <p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Login with email & password?</label></p>
-                </div><div class="auth-signup-link">Don't have an account? <a href="#modal_register" data-bs-toggle="modal" data-bs-target="#modal_register" data-bs-dismiss="modal">Sign Up</a></div></div><div class="auth-footer"><a href="#">Terms</a><a href="#">Privacy Policy</a></div></div></div></div></div></div>
-
-    <!-- Large Register Modal -->
-    <div class="modal fade" data-bs-backdrop="static" id="modal_register" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3 btn-close-white" data-bs-dismiss="modal" style="z-index:10;" aria-label="Close register modal"></button><div class="row g-0"><div class="col-md-6 modal-image-col" style="background-image: url('imgs/mohinga.jpg');" role="img" aria-label="Myanmar traditional dish"></div><div class="col-md-6 modal-form-col"><div class="form-scroll"><h2 class="auth-title">Create your account</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="text" placeholder="Username" aria-label="Username"></div><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email address"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Sign Up</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill">
-                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
-                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
-                        Continue with Google
-                    </label>
-                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
-                        <svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-                        Continue with GitHub
-                    </label>
-                    <label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">
-                        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
-                        Continue with Apple
-                    </label>
-                    <hr class="auth-divider">
-                    <p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Sign up with email & password?</label></p>
-                </div><div class="auth-signup-link">Already have an account? <a href="#modal_login" data-bs-toggle="modal" data-bs-dismiss="modal">Log In</a></div></div><div class="auth-footer"><a href="#">Terms</a><a href="#">Privacy Policy</a></div></div></div></div></div></div>
-
-    <!-- Small modals (unchanged) -->
+    <div class="modal fade" data-bs-backdrop="static" id="modal_login" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3 btn-close-white" data-bs-dismiss="modal" style="z-index:10;" aria-label="Close login modal"></button><div class="row g-0"><div class="col-md-6 modal-image-col" style="background-image: url('imgs/mohinga.jpg');" role="img" aria-label="Myanmar traditional dish"></div><div class="col-md-6 modal-form-col"><div class="form-scroll"><h2 class="auth-title">Welcome back</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email address"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><div class="text-end mb-3"><a href="#modal_forgot" data-bs-toggle="modal" style="color: var(--medi-primary);">Forgot password?</a></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Log In</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill"><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Continue with GitHub</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Continue with Apple</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Login with email & password?</label></p></div><div class="auth-signup-link">Don't have an account? <a href="#modal_register" data-bs-toggle="modal" data-bs-target="#modal_register" data-bs-dismiss="modal">Sign Up</a></div></div><div class="auth-footer"><a href="#">Terms</a><a href="#">Privacy Policy</a></div></div></div></div></div></div>
+    <div class="modal fade" data-bs-backdrop="static" id="modal_register" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-xl"><div class="modal-content position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3 btn-close-white" data-bs-dismiss="modal" style="z-index:10;" aria-label="Close register modal"></button><div class="row g-0"><div class="col-md-6 modal-image-col" style="background-image: url('imgs/mohinga.jpg');" role="img" aria-label="Myanmar traditional dish"></div><div class="col-md-6 modal-form-col"><div class="form-scroll"><h2 class="auth-title">Create your account</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="text" placeholder="Username" aria-label="Username"></div><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email address"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Sign Up</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill"><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59a14.5 14.5 0 0 1 0-9.18l-7.98-6.19a24.08 24.08 0 0 0 0 21.56l7.98-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Continue with GitHub</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>Continue with Apple</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Sign up with email & password?</label></p></div><div class="auth-signup-link">Already have an account? <a href="#modal_login" data-bs-toggle="modal" data-bs-dismiss="modal">Log In</a></div></div><div class="auth-footer"><a href="#">Terms</a><a href="#">Privacy Policy</a></div></div></div></div></div></div>
     <div class="modal fade" data-bs-backdrop="static" id="modal_login_sm" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:20px;"><div class="modal-body p-4 position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button><h2 class="auth-title">Welcome back</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><div class="text-end mb-3"><a href="#modal_forgot" data-bs-toggle="modal" style="color:var(--medi-primary);">Forgot password?</a></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Log In</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill"><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Google</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with GitHub</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Apple</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Login with email & password?</label></p></div><div class="auth-signup-link">Don't have an account? <a href="#modal_register_sm" data-bs-toggle="modal" data-bs-dismiss="modal">Sign Up</a></div></div></div></div></div>
     <div class="modal fade" data-bs-backdrop="static" id="modal_register_sm" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:20px;"><div class="modal-body p-4 position-relative"><button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button><h2 class="auth-title">Create your account</h2><div class="form_fill"><div class="mb-3"><input class="auth-email-input" type="text" placeholder="Username" aria-label="Username"></div><div class="mb-3"><input class="auth-email-input" type="email" placeholder="Email address" aria-label="Email"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Password" aria-label="Password"></div><label class="auth-email-btn" for="auth-logged" data-bs-dismiss="modal">Sign Up</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0">or continue with <label class="login_form" for="auth-link-fill">social accounts</label></p></div><div class="link_fill"><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Google</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with GitHub</label><label class="auth-social-btn" for="auth-logged" data-bs-dismiss="modal">Continue with Apple</label><hr class="auth-divider"><p class="text-center social-toggle-text mb-0"><label class="login_form" for="auth-form-fill">Sign up with email & password?</label></p></div><div class="auth-signup-link">Already have an account? <a href="#modal_login_sm" data-bs-toggle="modal" data-bs-dismiss="modal">Log In</a></div></div></div></div></div>
-
-    <!-- Forgot Password Modal -->
     <div class="modal fade" data-bs-backdrop="static" id="modal_forgot" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border-radius:20px;"><div class="modal-header"><h5 class="modal-title">Reset Password</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="mb-3"><input class="auth-email-input" type="password" placeholder="New Password" aria-label="New password"></div><div class="mb-3"><input class="auth-email-input" type="password" placeholder="Confirm Password" aria-label="Confirm password"></div><label class="auth-email-btn" data-bs-dismiss="modal">Reset</label></div></div></div></div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ once: true });</script>
-
 </body>
 </html>

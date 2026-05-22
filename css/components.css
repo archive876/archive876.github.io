@@ -798,8 +798,8 @@ body:has(.page-content:target) #page-home {
     color: var(--medi-primary);
 }
 
-/* ========== FIX: Toggle between email form and social login in modals ========== */
-/* Initially hide the social login sections and show the email form */
+
+
 .form_fill {
     display: block;
 }
@@ -807,7 +807,7 @@ body:has(.page-content:target) #page-home {
     display: none;
 }
 
-/* When auth-form-fill is checked (default), show email form, hide social */
+
 #auth-form-fill:checked ~ .modal .form_fill {
     display: block;
 }
@@ -815,7 +815,7 @@ body:has(.page-content:target) #page-home {
     display: none;
 }
 
-/* When auth-link-fill is checked, show social login, hide email form */
+
 #auth-link-fill:checked ~ .modal .form_fill {
     display: none;
 }
